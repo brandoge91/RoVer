@@ -342,10 +342,6 @@ class DiscordBot {
    */
   setActivity(text, activityType) {
     if (!this.bot || !this.bot.user) return
-
-    this.bot.user.setActivity(text || "http://eryn.io/RoVer", {
-      type: activityType,
-    })
   }
 
   /**
