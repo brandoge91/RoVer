@@ -13,7 +13,7 @@ const Util = require("./Util.js")
 const shardingManager = new Discord.ShardingManager(
   path.join(__dirname, "Shard.js"),
   {
-    token: config.token,
+    token: process.env.token,
     totalShards: config.totalShards || "auto",
     shardArgs: typeof v8debug === "object" ? ["--inspect"] : undefined,
     execArgv: ["--trace-warnings"],
@@ -58,7 +58,7 @@ async function getNextActivity() {
 
   switch (currentActivity) {
     case 0:
-      return { text: "https://RoVer.link" }
+      return { text: "jave" }
     case 1: {
       let totalGuilds = (
         await shardingManager.fetchClientValues("guilds.cache.size")
@@ -69,7 +69,7 @@ async function getNextActivity() {
     case 2:
       return { text: `${totalUsers} users`, type: "LISTENING" }
     case 3:
-      return { text: "!rover", type: "LISTENING" }
+      return { text: "!verify", type: "LISTENING" }
   }
 }
 
